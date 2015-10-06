@@ -1,20 +1,13 @@
 
 var Autocomplete = React.createClass({
-  render: function(){
-    return (
-      <div>
-        <input type="text" className="input" value={this.state.searchString} onInput={this.updateList}></input>
-        <SearchList autofill={this.autofill} names={this.state.searchList}/>
-      </div>
-    );
 
-  },
   getInitialState: function(){
-    return {searchList: names, searchString: ""};
+    debugger;
+    return {searchList: this.props.names, searchString: ""};
   },
 
   autofill: function(name){
-    this.setState({searchString: name})
+    this.setState({searchString: name});
   },
 
   updateList: function(e){
@@ -25,7 +18,15 @@ var Autocomplete = React.createClass({
       }.bind(this));
     }).bind(this);
   this.setState({searchList: filterList(), searchString: e.target.value});
+  },
 
+  render: function(){
+    return (
+      <div>
+        <input type="text" className="input" value={this.state.searchString} onInput={this.updateList}></input>
+        <SearchList autofill={this.autofill} names={this.state.searchList}/>
+      </div>
+    );
   }
 });
 
