@@ -4,7 +4,7 @@ var Tabs = React.createClass({
               {title: "Tab2", text: "text 2" + this.loremIpsum()},
               {title: "Tab3", text: "text 3" + this.loremIpsum()}],
             activeTab: 0
-    }
+    };
   },
 
   render: function() {

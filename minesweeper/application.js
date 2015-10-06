@@ -69,10 +69,10 @@ var Tile = React.createClass({
   toString: function() {
     var tile = this.props.board.grid[this.props.pos[0]][this.props.pos[1]];
     if(tile.bombed && tile.explored) {
-      this.state.value = "X";
+      this.state.value = '💣';
       this.state.tileType = "bombed";
     }else if(tile.flagged) {
-      this.state.value = "F";
+      this.state.value = '\u2691';
       this.state.tileType = "flagged";
     }else if (tile.explored === false) {
       this.state.value = "";
