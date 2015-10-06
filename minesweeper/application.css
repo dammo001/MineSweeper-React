@@ -1,0 +1,35 @@
+.board{
+  width: 300px;
+}
+.board:after, .row:after{
+  content: "";
+  clear:both;
+}
+
+.row {
+  display: block;
+  float: left;
+  list-style: none;
+}
+
+li {
+  border: 1px inset black;
+  float: left;
+  background-color: grey;
+  height: 25px;
+  width: 25px;
+}
+
+.tile.revealed{
+  border-color: grey;
+  border-style: outset;
+  background-color: lightgrey;
+}
+
+.tile.bombed{
+  background-color: red;
+}
+
+.flagged {
+  color: red;
+}
